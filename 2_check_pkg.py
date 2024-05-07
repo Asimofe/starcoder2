@@ -2,7 +2,7 @@ import subprocess
 import re
 
 def check_installed_packages():
-    """설치된 패키지 목록을 출력하고 특정 패키지들의 버전을 확인합니다."""
+    """설치된 패키지 목록을 출력, 특정 패키지들의 버전 확인"""
     result = subprocess.run(['pip', 'list'], capture_output=True, text=True)
     installed_packages = result.stdout
 

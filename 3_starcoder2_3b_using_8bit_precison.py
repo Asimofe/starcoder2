@@ -11,6 +11,7 @@ checkpoint = "bigcode/starcoder2-3b"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForCausalLM.from_pretrained("bigcode/starcoder2-3b", quantization_config=quantization_config)
 
+#inputs = tokenizer.encode("[생성할 함수명 입력]", return_tensors="pt").to("cuda")
 inputs = tokenizer.encode("def print_hello_world():", return_tensors="pt").to("cuda")
 outputs = model.generate(inputs)
 print(tokenizer.decode(outputs[0]))
